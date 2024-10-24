@@ -9,7 +9,8 @@
     "copy:fonts": "cpx \"./node_modules/source-sans-pro/**/*\" ./dist/fonts",
     "copy:json": "cpx \"./src/*.json\" ./dist",
     "dev-server": "webpack-dev-server --host=0.0.0.0 --content-base dist/ --history-api-fallback --color",
-    "dev": "npm-run-all clean --parallel copy:* dev-server",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider & npm-run-all clean --parallel copy:* dev-server",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider & npm-run-all clean --parallel copy:* dev-server",
     "validate": "npm ls"
   },
   "engines": {
