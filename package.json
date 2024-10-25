@@ -10,7 +10,8 @@
     "copy:json": "cpx \"./src/*.json\" ./dist",
     "dev-server": "webpack-dev-server --host=0.0.0.0 --content-base dist/ --history-api-fallback --color",
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider & npm-run-all clean --parallel copy:* dev-server",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider & npm-run-all clean --parallel copy:* dev-server",
+    "webpack": "webpack --mode production",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider & npm-run-all clean copy:* webpack",
     "validate": "npm ls"
   },
   "engines": {
